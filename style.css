@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    /* Font sizes */
+    --mainFontSize: 1.2em;
+    --tabFontSize: 14px;
+
+    --healthColor: green;
+    --damageColor: #455249;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #CECECE;
+    background-color: #121212;
+    font-size: var(--mainFontSize);
+}
+
+.bar {
+    display: flex;
+    
+    width: 95vw;
+    height: 100px;
+    margin: 0 auto; /* witchcraft to center the div */
+}
+
+.hp {
+    color: white;
+    background-color: var(--healthColor);
+    width: 75%;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.damage {
+    
+    background-color: var(--damageColor);
+    width: 25%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.health-label {
+    color: white;
+    text-align: center;
+    line-height: 0.5;
+    font-weight: 500;
+    position: absolute;
+    top: 5px;
+    left: 45%;
+}
