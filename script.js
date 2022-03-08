@@ -43,6 +43,26 @@ function updateHealth() {
 
     hpBar.style.width = String(hpPercent).concat("%");
     damageBar.style.width = String(damagePercent).concat("%");
+
+    if(hpPercent == 100) {
+
+        hpBar.style.borderRadius = "10px";
+
+    } else {
+        
+        hpBar.style.borderRadius = "10px 0px 0px 10px";
+
+    }
+
+    if(damagePercent == 100) {
+
+        damageBar.style.borderRadius = "10px";
+
+    } else {
+        
+        damageBar.style.borderRadius = "0px 10px 10px 0px";
+
+    }
 }
 
 function damage() {
@@ -62,3 +82,5 @@ function heal() {
 
     updateHealth()
 }
+
+updateHealth()
