@@ -44,3 +44,21 @@ function updateHealth() {
     hpBar.style.width = String(hpPercent).concat("%");
     damageBar.style.width = String(damagePercent).concat("%");
 }
+
+function damage() {
+    let amount = document.getElementById("damage-number").value;
+    let currentHealth = document.getElementById("current-health");
+
+    currentHealth.value = parseInt(currentHealth.value) - parseInt(amount);
+
+    updateHealth()
+}
+
+function heal() {
+    let amount = document.getElementById("damage-number").value;
+    let currentHealth = document.getElementById("current-health");
+
+    currentHealth.value = parseInt(currentHealth.value) + parseInt(amount);
+
+    updateHealth()
+}
