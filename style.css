@@ -4,23 +4,72 @@
     /* Font sizes */
     --mainFontSize: 1.2em;
     --tabFontSize: 14px;
-
-    --healthColor: green;
-    --damageColor: #455249;
+    
+    --bgColor: #202020;
+    /* --healthColor: #F83E23; */
+    --healthColor: #B90E0A;
+    --damageColor: black;
+    --btnColor: #028A0F;
+    --btnHovColor: #354A21;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
     color: #CECECE;
-    background-color: #121212;
+    background-color: var(--bgColor);
     font-size: var(--mainFontSize);
+}
+
+/* input[type=number], select { */
+.text-box, .num-box {
+    width: 100px;
+    color: var(--textColor);
+    font-family: inherit;
+    font-size: var(--tabFontSize);
+    background-color: var(--damageColor);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--btnColor);
+}
+
+input[type=number]:focus {
+    outline-color: var(--btnColor);
+}
+
+input[type=number] {
+    -moz-appearance: textfield; /* Removes num arrows */
+}
+
+/* Removes num arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .bar {
     display: flex;
     width: 95vw;
     height: 100px;
-    margin: 0 auto; /* witchcraft to center the div */
+    margin: 0 auto; /* witchcraft to center the div */ 
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: var(--btnColor);
+    color: white;
+    font-size: var(--tabFontSize);
+    padding: 10px;
+    /* box-shadow: var(--dropShad); */
+}
+
+.btn:hover {
+    background-color: var(--btnHovColor);
+    transition: 0.5s;
 }
 
 .health-label {
@@ -30,18 +79,18 @@ body {
     font-weight: 500;
     position: absolute;
     top: 5px;
-    left: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%);
 }
 
 #hp {
-    color: white;
     background-color: var(--healthColor);
     width: 100%;
     border-radius: 10px 0px 0px 10px;
 }
 
 #damage {
-    
     background-color: var(--damageColor);
     width: 0%;
     border-radius: 0px 10px 10px 0px;
