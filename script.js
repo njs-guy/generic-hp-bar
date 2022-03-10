@@ -63,6 +63,8 @@ function updateHealth() {
         damageBar.style.borderRadius = "0px 10px 10px 0px";
 
     }
+
+    saveSession();
 }
 
 function damage() {
@@ -83,4 +85,41 @@ function heal() {
     updateHealth()
 }
 
-updateHealth()
+function saveSession() {
+    const healthT = document.getElementById("health-desc");
+    const maxH = document.getElementById("max-health");
+    const currentH = document.getElementById("current-health");
+
+    localStorage.healthText = healthT.value;
+    localStorage.maxHealth = maxH.value;
+    localStorage.currentHealth = currentH.value;
+}
+
+function loadSession() {
+    const healthT = document.getElementById("health-desc");
+    const maxH = document.getElementById("max-health");
+    const currentH = document.getElementById("current-health");
+
+    // Check if session data exists
+    if(localStorage.getItem("healthText") === null) {
+        healthT.value = "Health"; // Default value
+    } else {
+        healthT.value = localStorage.healthText;
+    }
+
+    if(localStorage.getItem("maxHealth") === null) {
+        maxH.value = 100; // Default value
+    } else {
+        maxH.value = localStorage.maxHealth;
+    }
+
+    if(localStorage.getItem("currentHealth") === null) {
+        currentH.value = 100; // Default value
+    } else {
+        currentH.value = localStorage.currentHealth;
+    }
+
+}
+
+loadSession();
+updateHealth();
