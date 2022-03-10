@@ -1,5 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); */
-
 /* inter-regular - latin */
 @font-face {
     font-family: 'Inter';
@@ -33,7 +31,23 @@ body {
     font-size: var(--mainFontSize);
 }
 
-/* input[type=number], select { */
+.navbar {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.navbar-link {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin: 0;
+    padding: 5px;
+}
+
 .text-box, .num-box {
     width: 100px;
     color: var(--textColor);
