@@ -72,8 +72,11 @@ export function saveSettings() {
     let healthColSel = document.getElementById("health-color-select").value;
     let btnColSel = document.getElementById("button-color-select").value;
 
+    checkTheme();
+    currTheme = localStorage.currentTheme
+
     // Determine which colors to change based on current theme
-    switch(themeSel)
+    switch(currTheme)
     {
         case "light":
 
@@ -288,6 +291,9 @@ export function saveSettings() {
 }
 
 export function loadSettings() {
+
+    checkTheme();
+
     // Read local storage values
     let bodyT = localStorage.bodyText;
     let bgC = localStorage.bgColor;
@@ -307,15 +313,36 @@ export function loadSettings() {
     document.documentElement.style.setProperty("--healthColor", hpC);
     document.documentElement.style.setProperty("--btnColor", btnC);
     document.documentElement.style.setProperty("--btnHovColor", btnHovC);
+
+    console.log("Theme: " + localStorage.currentTheme);
 }
 
 export function resetToDefault()
 {
-    console.log("reset")
+    //dark colors
+    localStorage.currentTheme = "dark";
+    localStorage.bodyText = "#CECECE";
+    localStorage.bgColor = "#202020";
+    localStorage.NavLinkTextColor = "white";
+    localStorage.textBoxBgColor = "black";
+    localStorage.damageColor = "black";
+    localStorage.healthColor = "#B90E0A";
+    localStorage.btnColor = "#028A0F";
+    localStorage.btnHovColor = "#354A21";
+}
+
+// Check if currentTheme is undefined or not. Reset settings to default if it is.
+function checkTheme() {
+    if (localStorage.currentTheme === undefined)
+    {
+        resetToDefault();
+    } else {
+        return;
+    }
 }
 
 export function test() {
-    console.log("Test function wow")
+    console.log("Test function wow");
 }
 
 //document.getElementById("hp").style.backgroundColor = "blue"
