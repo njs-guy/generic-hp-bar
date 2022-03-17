@@ -162,7 +162,7 @@ input::-webkit-inner-spin-button {
     transform: translate(-50%);
 }
 
-.damage-controls, .settings-controls {
+.damage-controls, .settings-controls, .about-page {
     margin-left: 2.5vw;
 }
 
