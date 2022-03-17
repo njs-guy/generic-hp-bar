@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Generic HP Bar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body class="dark-theme">
+        <div class="navbar">
+            <a class="navbar-link" href="index.html">Home</a>
+            <a class="navbar-link navbar-active" href="settings.html">Settings</a>
+            <a class="navbar-link" href="about.html">About</a>
+        </div>
+        <!-- End nav-bar div -->
+
+        <div class="bar">
+            <div style="width: 75%;" id="hp" ></div>
+            <div style="width: 25%;" id="damage"></div>
+            <div class="health-label">
+                <h1 id="health-text">Preview</h1>
+                <p id="health-num">75 / 100</p>
+            </div>
+        </div>
+        <!-- End bar div -->
+        <br>
+        <div class="settings-controls">
+            <label for="health-desc">This textbox does nothing:</label>
+            <input type="text" class="text-box" id="health-desc" value="Just a preview.">
+            <button type="button" class="btn" id="damage-btn" onclick="window._settingsMod.saveSettings()">Preview</button>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <label for="background-theme-select">Background theme: </label>
+            <select name="theme" id="background-theme-select" onchange="window._settingsMod.saveSettings()">
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+                <option value="black">Black</option>
+            </select>
+            <p></p>
+
+            <label for="health-color-select">Health color:</label>
+            <select name="health-color" id="health-color-select" onchange="window._settingsMod.saveSettings()">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="purple">Purple</option>
+                <option value="orange">Orange</option>
+                <option value="pink">Pink</option>
+            </select>
+            <p></p>
+
+            <label for="button-color-select">Button color:</label>
+            <select name="button-color" id="button-color-select" onchange="window._settingsMod.saveSettings()">
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="purple">Purple</option>
+                <option value="orange">Orange</option>
+                <option value="pink">Pink</option>
+            </select>
+            <p></p>
+        </div>
+        
+
+        
+        <script src="settings.js" type="module"></script>
+    </body>
+</html>

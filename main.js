@@ -1,3 +1,5 @@
+import { saveSettings, loadSettings, test } from './modules/settingsModule.js'
+
 function updateHealth() {
     const healthLabel = document.getElementById("health-text");
     const healthNum = document.getElementById("health-num");
@@ -121,5 +123,10 @@ function loadSession() {
 
 }
 
-loadSession();
-updateHealth();
+// Windows to allow functions to still work though onclick in HTML
+window._settingsMod = { saveSettings, loadSettings, test }
+window._main = { updateHealth, damage, heal, saveSession, loadSession }
+
+window._settingsMod.loadSettings();
+window._main.loadSession();
+window._main.updateHealth();

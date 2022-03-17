@@ -18,19 +18,50 @@
     --tabFontSize: 14px;
     
     /* Properties */
-    --btnWidth: 80px;  
-}
+    --btnWidth: 80px;
 
-body.dark-theme {
+    /* Theme colors */
     --bodyTextColor: #CECECE;
     --bgColor: #202020;
     --navLinkTextColor: white;
-    --navLinkBgColor: #3D3D3D;
-    --healthColor: #B90E0A;
+    --navLinkBgColor: var(--btnColor);
+    --textBoxBgColor: #1B1B1B;
     --damageColor: black;
+
+    /* Bar and button colors */
+    --healthColor: #B90E0A;
     --btnColor: #028A0F;
     --btnHovColor: #354A21;
 }
+
+/* body.dark-theme {
+    --bodyTextColor: #CECECE;
+    --bgColor: #202020;
+    --navLinkTextColor: white;
+    --navLinkBgColor: #2B2B2B;
+    --damageColor: black;
+
+    --healthColor: #B90E0A;
+    --btnColor: #028A0F;
+    --btnHovColor: #354A21; */
+
+    /* ============ THEME COLORS ============
+    Red - #B90E0A
+    Red hover - #990F02
+    Blue - #1338BE
+    Blue hover - #241371
+    Yellow - #FFC30B
+    Yellow hover - #F9A602
+    Green - #028A0F
+    Green hover - #354A21
+    Purple - #710193
+    Purple hover - #4B0081
+    Orange - #ED7014
+    Orange hover - #D16002
+    Pink - #FD5DA8
+    Pink hover - #FF1694
+    */
+/* } */
 
 body {
     font-family: 'Inter', Helvetica, Arial, sans-serif;
@@ -55,7 +86,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     border-radius: 5px;
-    border: 1px solid var(--navLinkBgColor);
+    border: 2px solid var(--navLinkBgColor);
     margin: 5px 0px 5px 2.5vw;
     padding: 5px;
     vertical-align: middle;
@@ -69,9 +100,9 @@ body {
 .text-box, .num-box {
     width: 130px;
     color: var(--textColor);
+    background-color: var(--textBoxBgColor);
     font-family: inherit;
     font-size: var(--tabFontSize);
-    background-color: var(--damageColor);
     padding: 5px;
     border-radius: 5px;
     border: 1px solid var(--btnColor);
@@ -131,7 +162,7 @@ input::-webkit-inner-spin-button {
     transform: translate(-50%);
 }
 
-.damage-controls {
+.damage-controls, .settings-controls {
     margin-left: 2.5vw;
 }
 

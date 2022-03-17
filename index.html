@@ -9,6 +9,7 @@
     <body class="dark-theme">
         <div class="navbar">
             <a class="navbar-link navbar-active" href="index.html">Home</a>
+            <a class="navbar-link" href="settings.html">Settings</a>
             <a class="navbar-link" href="about.html">About</a>
         </div>
         <!-- End nav-bar div -->
@@ -38,13 +39,13 @@
             <p></p>
 
             <input type="number" class="num-box" id="damage-number" name="damage-number" min="1" max="2000000" value="1">
-            <button type="button" onclick="damage()" class="btn" id="damage-btn">Damage</button>
-            <button type="button" onclick="heal()" class="btn" id="heal-btn">Heal</button>
+            <button type="button" onclick="window._main.damage()" class="btn" id="damage-btn">Damage</button>
+            <button type="button" onclick="window._main.heal()" class="btn" id="heal-btn">Heal</button>
             <p></p>
 
-            <button type="button" onclick="updateHealth()" class="btn" id="refresh-btn">Refresh</button>
+            <button type="button" onclick="window._main.updateHealth()" class="btn" id="refresh-btn">Refresh</button>
         </form>
         <!-- End damage controls -->
-        <script src="main.js" type="text/javascript"></script>
+        <script type="module" src="main.js"></script>
     </body>
 </html>
