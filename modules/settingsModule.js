@@ -1,7 +1,5 @@
 // Functions used to save and load settings on each page.
 
-// UPDATE TextBoxBgColor!!!!!!!!!!!!!!!!!!
-
 export function saveSettings() {
     // Light theme colors
     const lBodyText = "black";
@@ -69,22 +67,24 @@ export function saveSettings() {
     const bPink = "#E11584";
     const bPinkHover = "#FD5DA8";
 
+    // Selects from HTML
+    let themeSel = document.getElementById("background-theme-select").value;
+    let healthColSel = document.getElementById("health-color-select").value;
+    let btnColSel = document.getElementById("button-color-select").value;
 
-    var themeSel = document.getElementById("background-theme-select").value;
-    var healthColSel = document.getElementById("health-color-select").value;
-    var btnColSel = document.getElementById("button-color-select").value;
-
+    // Determine which colors to change based on current theme
     switch(themeSel)
     {
         case "light":
-            // light colors
 
+            // light colors
             localStorage.bodyText = lBodyText;
             localStorage.bgColor = lBgColor;
             localStorage.NavLinkTextColor = lNavLinkTextColor;
             localStorage.textBoxBgColor = lTextBoxBgColor;
             localStorage.damageColor = lDamageColor;
 
+            // Change health color
             switch(healthColSel)
             {
                 case "red":
@@ -109,7 +109,8 @@ export function saveSettings() {
                     localStorage.healthColor = lPink;
                     break;
             } // End healthColSel
-
+            
+            // Change button color
             switch(btnColSel)
             {
                 case "red":
@@ -144,14 +145,15 @@ export function saveSettings() {
             break;
 
         case "dark":
+
             //dark colors
-            
             localStorage.bodyText = dBodyText;
             localStorage.bgColor = dBgColor;
             localStorage.NavLinkTextColor = dNavLinkTextColor;
             localStorage.textBoxBgColor = dTextBoxBgColor;
             localStorage.damageColor = dDamageColor;
 
+            // Change health color
             switch(healthColSel)
             {
                 case "red":
@@ -177,6 +179,7 @@ export function saveSettings() {
                     break;
             } // End healthColSel
 
+            // Change button color
             switch(btnColSel)
             {
                 case "red":
@@ -212,6 +215,7 @@ export function saveSettings() {
             break; // End case dark
 
         case "black":
+
             //black colors
             localStorage.bodyText = bBodyText;
             localStorage.bgColor = bBgColor;
@@ -219,6 +223,7 @@ export function saveSettings() {
             localStorage.textBoxBgColor = bTextBoxBgColor;
             localStorage.damageColor = bDamageColor;
 
+            // Change health color
             switch(healthColSel)
             {
                 case "red":
@@ -244,6 +249,7 @@ export function saveSettings() {
                     break;
             } // End healthColSel
 
+            // Change button color
             switch(btnColSel)
             {
                 case "red":
@@ -282,22 +288,15 @@ export function saveSettings() {
 }
 
 export function loadSettings() {
-    // Setting selectors
-    // const themeSel = document.getElementById("background-theme-select");
-    // const healthColSel = document.getElementById("health-color-select");
-    // const btnColSel = document.getElementById("button-color-select");
-
     // Read local storage values
-    var bodyT = localStorage.bodyText;
-    var bgC = localStorage.bgColor;
-    var navLinkTC = localStorage.NavLinkTextColor;
-    var txtBoxBC = localStorage.textBoxBgColor;
-    var damC = localStorage.damageColor;
-    var hpC = localStorage.healthColor;
-    var btnC = localStorage.btnColor;
-    var btnHovC = localStorage.btnHovColor;
-
-    //console.log("Health color: " + hpC);
+    let bodyT = localStorage.bodyText;
+    let bgC = localStorage.bgColor;
+    let navLinkTC = localStorage.NavLinkTextColor;
+    let txtBoxBC = localStorage.textBoxBgColor;
+    let damC = localStorage.damageColor;
+    let hpC = localStorage.healthColor;
+    let btnC = localStorage.btnColor;
+    let btnHovC = localStorage.btnHovColor;
 
     // Set values in CSS
     document.documentElement.style.setProperty("--bodyTextColor", bodyT);
@@ -308,8 +307,6 @@ export function loadSettings() {
     document.documentElement.style.setProperty("--healthColor", hpC);
     document.documentElement.style.setProperty("--btnColor", btnC);
     document.documentElement.style.setProperty("--btnHovColor", btnHovC);
-
-    //console.log(btnC);
 }
 
 export function resetToDefault()

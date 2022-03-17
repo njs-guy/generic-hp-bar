@@ -1,6 +1,9 @@
+// Code for updating the HP bar and label in index
+
 import { saveSettings, loadSettings, test } from './modules/settingsModule.js'
 
 function updateHealth() {
+    // HTML Elements
     const healthLabel = document.getElementById("health-text");
     const healthNum = document.getElementById("health-num");
 
@@ -17,12 +20,13 @@ function updateHealth() {
     let currentHP = currentHealth.value;
     let label = currentHP.concat(" / ", maxHP);
 
+    // Change text contents of labels
     healthLabel.textContent = healthText;
     healthNum.textContent = label;
 
     // Update bar
-    // hpPercent is the percentage that is health (green by default)
-    // damagePercent is the percentage that is damaged (grey by default)
+    // hpPercent is the percentage that is health (red by default)
+    // damagePercent is the percentage that is damaged
     let hpPercent = (currentHP / maxHP) * 100;
 
     if (hpPercent > 100){
@@ -43,6 +47,7 @@ function updateHealth() {
         damagePercent = 0;
     }
 
+    // Change CSS width percentages for hp and damage
     hpBar.style.width = String(hpPercent).concat("%");
     damageBar.style.width = String(damagePercent).concat("%");
 
@@ -69,6 +74,7 @@ function updateHealth() {
     saveSession();
 }
 
+// Damage by the amount currently in damage-number
 function damage() {
     let amount = document.getElementById("damage-number").value;
     let currentHealth = document.getElementById("current-health");
@@ -78,6 +84,7 @@ function damage() {
     updateHealth()
 }
 
+// Heal by the amount currently in damage-number
 function heal() {
     let amount = document.getElementById("damage-number").value;
     let currentHealth = document.getElementById("current-health");
@@ -87,6 +94,7 @@ function heal() {
     updateHealth()
 }
 
+// Save the current session to local storage
 function saveSession() {
     const healthT = document.getElementById("health-desc");
     const maxH = document.getElementById("max-health");
@@ -97,6 +105,7 @@ function saveSession() {
     localStorage.currentHealth = currentH.value;
 }
 
+// Save the previous session from local storage
 function loadSession() {
     const healthT = document.getElementById("health-desc");
     const maxH = document.getElementById("max-health");

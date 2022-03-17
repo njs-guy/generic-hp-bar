@@ -34,35 +34,6 @@
     --btnHovColor: #354A21;
 }
 
-/* body.dark-theme {
-    --bodyTextColor: #CECECE;
-    --bgColor: #202020;
-    --navLinkTextColor: white;
-    --navLinkBgColor: #2B2B2B;
-    --damageColor: black;
-
-    --healthColor: #B90E0A;
-    --btnColor: #028A0F;
-    --btnHovColor: #354A21; */
-
-    /* ============ THEME COLORS ============
-    Red - #B90E0A
-    Red hover - #990F02
-    Blue - #1338BE
-    Blue hover - #241371
-    Yellow - #FFC30B
-    Yellow hover - #F9A602
-    Green - #028A0F
-    Green hover - #354A21
-    Purple - #710193
-    Purple hover - #4B0081
-    Orange - #ED7014
-    Orange hover - #D16002
-    Pink - #FD5DA8
-    Pink hover - #FF1694
-    */
-/* } */
-
 body {
     font-family: 'Inter', Helvetica, Arial, sans-serif;
     color: var(--bodyTextColor);
