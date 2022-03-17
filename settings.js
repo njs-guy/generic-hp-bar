@@ -1,9 +1,9 @@
 // Driver for loading and saving settings on the Settings page.
 
-import { saveSettings, loadSettings, test } from './modules/settingsModule.js'
+import { saveSettings, loadSettings, loadDropDowns } from './modules/settingsModule.js'
 
 
-window._settingsMod = { saveSettings, loadSettings, test }
+window._settingsMod = { saveSettings, loadSettings, loadDropDowns}
 
-window._settingsMod.test();
 window._settingsMod.loadSettings();
+window._settingsMod.loadDropDowns();

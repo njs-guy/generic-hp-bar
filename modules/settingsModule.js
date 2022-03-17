@@ -73,10 +73,12 @@ export function saveSettings() {
     let btnColSel = document.getElementById("button-color-select").value;
 
     checkTheme();
-    currTheme = localStorage.currentTheme
+    localStorage.currentTheme = document.getElementById("background-theme-select").selectedIndex;
+    localStorage.healthColDropDown = document.getElementById("health-color-select").selectedIndex;
+    localStorage.btnColDropDown = document.getElementById("button-color-select").selectedIndex;
 
     // Determine which colors to change based on current theme
-    switch(currTheme)
+    switch(themeSel)
     {
         case "light":
 
@@ -313,8 +315,6 @@ export function loadSettings() {
     document.documentElement.style.setProperty("--healthColor", hpC);
     document.documentElement.style.setProperty("--btnColor", btnC);
     document.documentElement.style.setProperty("--btnHovColor", btnHovC);
-
-    console.log("Theme: " + localStorage.currentTheme);
 }
 
 export function resetToDefault()
@@ -331,6 +331,12 @@ export function resetToDefault()
     localStorage.btnHovColor = "#354A21";
 }
 
+export function loadDropDowns() {
+    document.getElementById("background-theme-select").selectedIndex = localStorage.currentTheme;
+    document.getElementById("health-color-select").selectedIndex = localStorage.healthColDropDown;
+    document.getElementById("button-color-select").selectedIndex = localStorage.btnColDropDown;
+}
+
 // Check if currentTheme is undefined or not. Reset settings to default if it is.
 function checkTheme() {
     if (localStorage.currentTheme === undefined)
@@ -344,5 +350,3 @@ function checkTheme() {
 export function test() {
     console.log("Test function wow");
 }
-
-//document.getElementById("hp").style.backgroundColor = "blue"
